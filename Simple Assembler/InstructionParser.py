@@ -1,5 +1,3 @@
-from ast import Str
-from lib2to3.pgen2.token import OP
 import TableGenerator as TB
 
 Classc = 0
@@ -155,7 +153,7 @@ def Converter(temp_list):
             IClist = checkInsType(temp_list[i])
             f.write("(" + str(IClist) + ")")
 
-        elif (TB.checkinSYM(temp_list[i])):
+        elif (TB.checkinSYM(temp_list[i])): 
             f.write("(" + "S" + "," + str(TB.SymLC) + ")")
 
         elif (TB.checkinLT(temp_list[i])):

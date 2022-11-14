@@ -1,7 +1,7 @@
-
 SymbolTable = []   # This table contains all the symbols along with their addresses.
 LiteralTable = []  # This table contains all the Literals along with their addresses.
 PoolTable = []     # This table contains all the Pool Entries occured due to LTORG instruction.
+temp = []          # This list checks for the second occurence of Symbols while converting to Intermediate Code.
 LTindex = 0        # This variable is used as index in Literal table to maintain Literal table entries.
 PTindex = 0        # This variable is used as index in pool table to maintain Pool table entries.
 count = 0
@@ -69,10 +69,11 @@ def PrintTable():
     print("\n".join(["  ".join(map(str, i)) for i in PoolTable]))
     
 
-def checkinSYM(Ele):
+def checkinSYM(Ele):      
     for i in range(len(SymbolTable)):
         if (Ele == SymbolTable[i][1]):
             global SymLC
+            temp.append(SymbolTable[i][1])
             SymLC = SymbolTable[i][0]
             return True
     return False
