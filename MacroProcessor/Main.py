@@ -13,16 +13,16 @@ def main():
     content_list = file_content.split("\n")
     txt_file.close()                        
 
-    LC = 0
-
     for i in content_list:
         delimiters = " ",",","+"
         regexPattern = '|'.join(map(re.escape, delimiters))
         temp_list = re.split(regexPattern, i)
-        LC = Instruction_Parser(temp_list,LC)
+        Instruction_Parser(temp_list)
 
 
-    TB.PrintTable()
+    TB.Display_MDT()
+    TB.Display_MNT()
+    TB.Display_Arguments()
 
 
 if __name__ == '__main__':
