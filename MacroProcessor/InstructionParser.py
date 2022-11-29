@@ -27,18 +27,15 @@ def Instruction_Parser(temp_list):
             if(Check_in_MNT(temp_list[0])):
                 Str = ""
                 for i in range(len(TB.iMDT)):
-                    OutWrite(TB.iMDT[i])
+                    if(TB.iMDT[i][0] == "MEND"):
+                        break
+                    else:
+                        OutWrite(TB.iMDT[i])
             else:
                 OutWrite(temp_list)
     else:
         Macro_Processor(temp_list)
         
-            # print(temp_list)
-            # for i in range(len(temp_list)):
-            #     for j in range(len(temp_list[i])):
-            #         if temp_list[i][j] == "=":
-            #             temp = temp_list[i].split("=")
-            #             print(temp)
     
 def Macro_Processor(temp_list):
     

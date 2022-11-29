@@ -21,7 +21,9 @@ def main():
 
 
     TB.Display_MDT()
+    print("\n")
     TB.Display_MNT()
+    print("\n")
     TB.Display_Arguments()
 
 
