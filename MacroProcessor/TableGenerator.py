@@ -2,6 +2,7 @@ iMNT = list()               # This is the definition for Macro Name Table.
 iMDT = list()               # This is the definition for Macro Data Table.
 iArgument_List = list()     # This is the defnition for Argument List Data.
 
+
 def Display_MNT():
     for i in iMNT:
         print(i)
@@ -34,9 +35,21 @@ def Add_Argument(temp_list,Flag,Name):
     if(Flag == 0):
         for i in range(2,len(temp_list)):
             temp.append(temp_list[i])
+        
+        temp = [item.split('=') for item in temp]
+        temp = [item for l in temp for item in l]
+        
         iArgument_List.append(temp)
         
     elif(Flag == 1):
         for i in range(1, len(temp_list)):
             temp.append(temp_list[i])
         iArgument_List.append(temp)
+
+        
+def Replace_Arguments(temp_list):
+    Actual_Argument = list()
+    for i in range(1,len(temp_list)):
+        Actual_Argument.append(temp_list[i])
+    
+    return Actual_Argument
