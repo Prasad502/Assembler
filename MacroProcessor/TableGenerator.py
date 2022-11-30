@@ -21,6 +21,10 @@ def MNT_Add(Macro_Name,Parameter):
     temp = list()
     temp.append(Macro_Name)
     temp.append(Parameter)
+    
+    Start_Index = len(iMDT)
+    
+    temp.append(Start_Index)
     iMNT.append(temp)
 
 def Add_Argument(temp_list,Flag,Name):
