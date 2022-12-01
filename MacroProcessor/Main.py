@@ -19,8 +19,6 @@ def main():
         temp_list = re.split(regexPattern, i)
         Instruction_Parser(temp_list)
 
-
-    TB.Display_MDT()
     print("\n")
     TB.Display_MNT()
     print("\n")

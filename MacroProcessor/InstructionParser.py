@@ -41,8 +41,11 @@ def Instruction_Parser(temp_list):
             MacroFlag = 1
             Macro_Processor(temp_list)
         else:
-            if(Check_in_MNT(temp_list[0])):
+            if (temp_list[0] == "START"):
+                TB.Display_MDT()
                 
+            if(Check_in_MNT(temp_list[0])):
+
                 Real_Arguments = TB.Replace_Arguments(temp_list)
                 
                 i = Start_Index_of_MDT(temp_list[0])
